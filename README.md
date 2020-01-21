@@ -17,16 +17,15 @@ I first coded some functions : it was much easier to play with the data then. I 
 
 I found some deposits on GitHub and other packages with "optimized" Cox model (Gradient-boosted, different base-learner), but I decided to stick with standard one and rather play with the parameters.
 
-
 ## What was test and is not in the code
-After reading a bit about Cox model and survival prediction, I decided to try using the binary mask to extract features, but I realised it would obvisouly be too long. I wanted to give neural net a try even though it I thought it would be overkill and not efficient.
-At first, I used 3d convolutionnal layer with raw scan as inputs, which turned to be way too computationnal expensive for my computer (I wanted to use the image as radiomics were described as biased and suboptimal). It was still too slow with the binary masks, so I decided to try with the radiomics and clinical data. I tried a "regression" neural net (MSE on the survival time as loss), which gave terrible results. 
-I then tried to use a "discrete time" model as classification to use a standard neural network. My idea was to set a max survival time, and divide it in *N* intervals. The goal was to predict in which interval the lifetime expectancy would be. Unfortunatly, I spent some times on it without having any results so I stopped trying neural nets.
+I wanted to give neural net (Keras) a try even though it I thought it would probably be overkill and unefficient.
+At first, I used 3d convolutionnal layer with raw scan as inputs, which turned to be way too computationnally expensive for my computer (I wanted to use the scans or the masks, because radiomics were described as biased and suboptimal). It was still too slow with the binary masks, so I decided to try with the radiomics and clinical data as inputs. I tried a "regression" neural net (MSE on the survival time as loss, single output), which gave terrible results. 
+I then tried to use a "discrete time" model as classification to use a *standard* neural network. My idea was to set a max survival time, and divide it in a given number of intervals. The goal was to predict in which interval the lifetime would be. Unfortunately, I spent some time on it without having any results so I stopped trying neural nets.
 
 ## What could not be tested
-- Extracting features directly from the scans instead of using the "standard" radiomics features. I thought that after making a very deep work on the radiomics features (features selection based on different criterion, dimensionality reduction (PCA or ICA)), we could use a neural net using the scan or the binary masks as inputs, and train the network to predict the new features, using image processing methods, which would be used in the Cox model, or any other model.
+- Extracting features directly from the scans instead of using the "standard" radiomics features. I thought that after making a very deep work on the radiomics features (features selection based on different criterion, dimensionality reduction (PCA or ICA)), we could use a neural net using the scan or the binary masks as inputs, and train the network to predict the new features, using image processing methods, features which would then be used in the Cox model, or any other model.
 
-- The differents optimized Cox fitter I read or found about online, but also more effective features selections. I used Pearsons correlation coefficients but could have probably used other criterion.
+- The differents optimized Cox fitter I read or found about online, and more effective features selections. I used Pearson correlation coefficients but could have probably used other criterion.
 
 - Using other survival time prediction model : from the few papers and articles I read about survival time prediction, Cox model appeared to be the best "estimator" when it comes to censored data, yet I could have tested other model (there actually were some in the ```lifeline``` package).
 
