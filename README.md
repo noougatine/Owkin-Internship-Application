@@ -29,6 +29,6 @@ I then tried to use a "discrete time" model as classification to use a *standard
 
 - The differents optimized Cox fitter I read or found about online, and more effective features selections. I used Pearson correlation coefficients but could have probably used other criterion.
 
-- Using other survival time prediction model : from the few papers and articles I read about survival time prediction, Cox model appeared to be the best "estimator" when it comes to censored data, yet I could have tested other model (there actually were some in the ```lifeline``` package).
+- Using other survival time prediction model : from the few papers and articles I read about survival time prediction, Cox model appeared to be the best "estimator" when it comes to censored data (which is why I decided to stick with it), yet I could have tested other model (there actually were some in the ```lifeline``` package).
 
 
