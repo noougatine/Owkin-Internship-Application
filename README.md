@@ -25,7 +25,7 @@ At first, I used 3d convolutionnal layer with raw scans as inputs, which turned 
 I then tried to use a "discrete time" model as classification to use a *standard* neural network. My idea was to set a max survival time, and divide it in a given number of intervals. The goal was to predict in which interval the lifetime would be. Unfortunately, I spent some time on it without having any results so I stopped trying neural nets.
 
 ## What I wanted to test but did not
-- Extracting features directly from the scans instead of using the "standard" radiomics features. I thought that after making a very deep work on the radiomics features (features selection based on different criterion, dimensionality reduction (PCA or ICA)), we could use a neural net using the scans or the binary masks as inputs, and train the network to predict these new features, using image processing methods, features which would then be used in the Cox model, or any other model.
+- Extracting features directly from the scans instead of using the "standard" radiomics features. I thought that after making a very deep work on the radiomics features (features selection based on different criterion, dimensionality reduction (PCA or ICA)), we could extract a set of features. Then, using a neural net, with the scans or the binary masks as inputs (eventually some imaging pipelines), we could train the network to predict those new features, which would then be used in the Cox model, or any other model.
 
 - The differents optimized Cox fitter I read or found about online, and more effective features selections. I used Pearson correlation coefficients but could have probably used other criterion.
 
