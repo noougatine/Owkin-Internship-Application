@@ -1,7 +1,7 @@
 # Owkin application - Thomas AUZARD
 
 # Description
-Deposit for the Owkin data challenge as part of my application for the "Machine Learning Scientist - Medical imaging - Internship" offer.
+Repository for the Owkin data challenge as part of my application for the "Machine Learning Scientist - Medical imaging - Internship" offer.
 It contains the (short) code, the data used (.csv) and some explanations.
 ### Requirements
 ```bash
