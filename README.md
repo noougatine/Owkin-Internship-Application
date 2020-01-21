@@ -12,6 +12,7 @@ pip install -r requirements.txt
 ## What's in and behind the code
 After reading the description of the challenge and understanding it, I decided to use the ```lifeline``` package for the Cox model. 
 I quickly tried to obtain a first prediction using all radiomics + all clinical data, which gave me a score just a little below the benchmark. After playing around with the features and the lifeline package which can be very visual, I did a feature selection based on Pearson correlation coefficient. From that I extracted "useful" features, and did a second prediction, which gave me a score a little above the benchmark (0.7198). I finally used ```lifeline``` to have a quick overview of the model, and realised that a lot of features were "useless" for the regression (0 coefficients in the \beta vector). I removed them and did a last prediction for the test dataset, which gave me a score of 0.728 (please note that the submission from the account *orsonlelyonnais* and *thomas_auzard* are both mine).
+The code is probably a bit "awkwardly" written; I used a lot of loop to find the parameters.
 
 I first coded some functions : it was much easier to play with the data then. I searched a little on the internet about Cox model and survival prediction, and realised that in the amount time I wanted to spend on this project, I would probably not be able to use something different than the "standard" Cox model. 
 
