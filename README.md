@@ -20,7 +20,7 @@ I found some deposits on GitHub and other packages with "optimized" Cox model (G
 
 ## What was tested and is not in the code
 I wanted to give neural net (Keras) a try even though it I thought it would probably be overkill and unefficient.
-At first, I used 3d convolutionnal layer with raw scan as inputs, which turned to be way too computationnally expensive for my computer (I wanted to use the scans or the masks, because radiomics were described as biased and suboptimal). It was still too slow with the binary masks, so I decided to try with the radiomics and clinical data as inputs. I tried a "regression" neural net (MSE on the survival time as loss, single output), which gave terrible results. 
+At first, I used 3d convolutionnal layer with raw scans as inputs, which turned out to be way too computationnally expensive for my computer (I wanted to use the scans or the masks, because radiomics were described as biased and suboptimal). It was still too slow with the binary masks, so I decided to try with the radiomics and clinical data as inputs. I tried a "regression" neural net (MSE on the survival time as loss, single output), which gave terrible results. 
 I then tried to use a "discrete time" model as classification to use a *standard* neural network. My idea was to set a max survival time, and divide it in a given number of intervals. The goal was to predict in which interval the lifetime would be. Unfortunately, I spent some time on it without having any results so I stopped trying neural nets.
 
 ## What I wanted to test but did not
