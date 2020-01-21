@@ -1,8 +1,8 @@
-# Owkin-data-challenge
+# Owkin application - Thomas AUZARD
 
 # Description
-Deposit for the Owkin data challenge.
-It contains the (short) code and the data used (.csv).
+Deposit for the Owkin data challenge as part of my application for the "Machine Learning Scientist - Medical imaging - Internship" offer.
+It contains the (short) code, the data used (.csv) and some explanations.
 ### Requirements
 ```bash
 pip install -r requirements.txt
