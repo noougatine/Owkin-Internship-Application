@@ -18,6 +18,9 @@ I first coded some functions : it was much easier to play with the data then. I 
 I found some deposits on GitHub and other packages with "optimized" Cox model (Gradient-boosted, different base-learner), but I decided to stick with standard one and rather play with the parameters.
 
 ## What was tested and is not in the code
+
+Regarding features selection, I tried Spearman selection, but it did not gave me better reasults than Pearson selection. I also tried to standardize the datas (using sklearn function), but again, the results where not better (quite oddly).
+
 I wanted to give neural net (Keras) a try even though it I thought it would probably be overkill and unefficient.
 At first, I used 3d convolutionnal layer with raw scans as inputs, which turned out to be way too computationnally expensive for my computer (I wanted to use the scans or the masks, because radiomics were described as biased and suboptimal). It was still too slow with the binary masks, so I decided to try with the radiomics and clinical data as inputs. I tried a "regression" neural net (MSE on the survival time as loss, single output), which gave terrible results. 
 
